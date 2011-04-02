@@ -1,0 +1,9 @@
+{% extends "MaxSymForum::layout.html.twig" %}
+
+{% block title "SymForum - Manager" %}
+
+{% block content %}
+  {% for item in managers %}
+    <p><a href="{{ path('_symforum_subjects',{'name':item.name}) }}">{{ item.name }}</a></p>
+  {% endfor %}
+{% endblock %}

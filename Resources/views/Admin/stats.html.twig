@@ -1,0 +1,12 @@
+{% extends "MaxSymForum::simpleLayout.html.twig" %}
+
+{% block title "Admin" %}
+
+{% block content %}
+
+  <p><a class="symfony-button-green" href="{{ path('_admin') }}">Admin</a> Total : {{ count }} stats</p>
+  {% for item in entity %}
+        <p>{{ item.id }} {{ item.ip }} {{ item.agent }} {{ item.url }} <a href="{{ path('_admin_delete', {'id': item.id, 'entity': 'Max\\SymForumBundle\\Entity\\Stat' }) }}">Delete</a></p>
+  {% endfor %}
+
+{% endblock %}

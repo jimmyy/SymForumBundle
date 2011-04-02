@@ -1,0 +1,19 @@
+{% extends "MaxSymForum::simpleLayout.html.twig" %}
+
+{% block title "Admin" %}
+
+{% block content %}
+
+  <p><a class="symfony-button-green" href="{{ path('_admin_new_post',{'name':name}) }}">New Post</a> Total : {{ count }} posts</p>
+  {% for item in entity %}
+        <p>
+          <span style="font-style:italic">{{ item.id }}</span>
+          <span style="font-weight:bold">{{ item.title }}</span>
+          <br />
+          {{ item.text }}<br />
+          <a href="{{ path('_admin_edit', {'id': item.id, 'entity': 'Max\\SymForumBundle\\Entity\\Post', 'name':name }) }}">Edit</a>
+          <a href="{{ path('_admin_delete', {'id': item.id, 'entity': 'Max\\SymForumBundle\\Entity\\Post', 'name':name }) }}">Delete</a>
+        </p>
+  {% endfor %}
+
+{% endblock %}

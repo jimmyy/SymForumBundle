@@ -1,0 +1,21 @@
+{% extends "MaxSymForum::simpleLayout.html.twig" %}
+
+{% block title "Admin" %}
+
+{% block content %}
+
+<p><a class="symfony-button-green" href="{{ path('_admin_posts') }}">Posts</a></p>
+
+<p><a class="symfony-button-green" href="{{ path('_admin_subjects') }}">Subjects</a></p>
+
+<p><a class="symfony-button-green" href="{{ path('_admin_types') }}">Types</a></p>
+
+<p><a class="symfony-button-green" href="{{ path('_admin_stats') }}">Stat</a></p>
+
+<p><a class="symfony-button-green" href="{{ path('admininfo') }}">Admin Info</a></p>
+{#
+<p><a class="symfony-button-green" href="{{ path('databaseinfo') }}">Database Info</a></p>
+#}
+<p><a class="symfony-button-green" href="{{ path('phpinfo') }}">PHP Info</a></p>
+
+{% endblock %}

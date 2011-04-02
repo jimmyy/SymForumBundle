@@ -1,0 +1,12 @@
+{% extends "MaxSymForum::simpleLayout.html.twig" %}
+
+{% block title "Admin - Types" %}
+
+{% block content %}
+
+  <p><a class="symfony-button-green" href="{{ path('_admin_new_type',{'name':name}) }}">Types</a> Total : {{ count }} types</p>
+  {% for item in entity %}
+        <p>{{ item.name }} <a href="{{ path('_admin_delete', {'id': item.id, 'entity': 'Max\\SymForumBundle\\Entity\\Post', 'name':name }) }}">Delete</a></p>
+  {% endfor %}
+
+{% endblock %}
